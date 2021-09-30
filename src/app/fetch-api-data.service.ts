@@ -121,7 +121,7 @@ export class FetchApiDataService {
           Authorization: `Bearer ${token}`,
         }),
       })
-      .pipe(map(this.extractResponseData), catchError(this.handleError));
+      .pipe(catchError(this.handleError));
   }
 
   deleteFavoriteMovie(id: any): Observable<any> {

@@ -48,11 +48,20 @@ export class ProfileComponent implements OnInit {
   }
 
   deleteUser(): void {
-    this.fetchApiData.deleteUser().subscribe((response) => {
-      this.snackBar.open('Account Deleted.', 'OK', {
-        duration: 2000
-      })
-    })
+    this.fetchApiData.deleteUser().subscribe(() => {
+      this.snackBar.open('Your account has been deleted!', 'OK',
+        { duration: 3000,}
+      );
+    },
+      (result) => {
+      this.snackBar.open(result, 'OK', {duration: 3000,});
+      this.router.navigate(['welcome']).then(() => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        window.location.reload();
+      });
+    }
+    );
   }
 
   openUpdateDialog(): void {
