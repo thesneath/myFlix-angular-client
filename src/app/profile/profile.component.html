@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-list class="profile">
+    <h2>Profile</h2>
+    <div>
+      <mat-list-item>Username: {{user.Username}} </mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+    <div>
+      <mat-list-item>Email: {{user.Email}}</mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+    <div>
+      <mat-list-item>Birthday: {{user.Birthday | date : 'MM/dd/yyyy' : 'UTC'}}</mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+    <div>
+      <mat-list-item>Favorite Movies: </mat-list-item>
+        <mat-list-item *ngFor="let favorite of favorites" class="favorites">{{favorite}}</mat-list-item>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-list>
+</div>

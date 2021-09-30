@@ -1,0 +1,32 @@
+$My-Color-Theme-1-hex: #B1B5BA;
+$My-Color-Theme-2-hex: #74777A;
+$My-Color-Theme-3-hex: #EDF3FA;
+$My-Color-Theme-4-hex: #38393B;
+$My-Color-Theme-5-hex: #D5DAE0;
+
+/* Color Theme Swatches in Hex */
+$Small-movie-theater-1-hex: #D93250;
+$Small-movie-theater-2-hex: #732743;
+$Small-movie-theater-3-hex: #030F26;
+$Small-movie-theater-4-hex: #F25757;
+$Small-movie-theater-5-hex: #F2F2F2;
+
+
+
+.main-page {
+  background-color: $Small-movie-theater-5-hex;
+  color: $Small-movie-theater-3-hex;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: $Small-movie-theater-1-hex;
+  color: $Small-movie-theater-5-hex;
+  margin: 10px 5px;
+  width: 80px;
+}

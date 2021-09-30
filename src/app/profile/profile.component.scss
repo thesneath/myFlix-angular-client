@@ -1,0 +1,27 @@
+$Small-movie-theater-1-hex: #D93250;
+$Small-movie-theater-2-hex: #732743;
+$Small-movie-theater-3-hex: #030F26;
+$Small-movie-theater-4-hex: #F25757;
+$Small-movie-theater-5-hex: #F2F2F2;
+
+.container {
+  width: 70%;
+  margin: auto;
+  margin-top: 5vw;
+  background-color: $Small-movie-theater-5-hex;
+  color: $Small-movie-theater-3-hex;
+  box-shadow: 10px 5px 5px darken($color: #732743, $amount: 20%);
+  border-radius: 4px;
+  min-height: 400px;
+}
+
+.favorites {
+  margin-left: 30px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}

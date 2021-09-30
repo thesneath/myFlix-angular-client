@@ -1,0 +1,40 @@
+$Small-movie-theater-1-hex: #D93250;
+$Small-movie-theater-2-hex: #732743;
+$Small-movie-theater-3-hex: #030F26;
+$Small-movie-theater-4-hex: #F25757;
+$Small-movie-theater-5-hex: #F2F2F2;
+
+.nav {
+  flex: 1 1 auto;
+  justify-content: space-between;
+  background-color: $Small-movie-theater-3-hex;
+  color: $Small-movie-theater-4-hex;
+  border-radius: 4px;
+  box-shadow: 10px 5px 5px darken($color: #732743, $amount: 20%);
+  margin: 10px auto;
+  width: 90%;
+  height: 100px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h1:hover {
+  color: $Small-movie-theater-5-hex;
+  transition: color .5s;
+}
+
+button {
+  font-size: .9em;
+}
+
+button:hover {
+  color: $Small-movie-theater-5-hex;
+  transition: all .3s;
+}
+
+.active {
+  color: $Small-movie-theater-5-hex;
+}

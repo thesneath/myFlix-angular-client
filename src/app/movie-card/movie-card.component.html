@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card class="card" *ngFor="let movie of movies">
+    <div class="header">
+    <mat-icon *ngIf="!isFavorite(movie._id)" (click)="addFavorite(movie._id)" class="fav">star_border</mat-icon>
+    <mat-icon *ngIf="isFavorite(movie._id)" (click)="removeFavorite(movie._id)" class="fav">star</mat-icon>
+    <mat-card-header>
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle>Directed By: {{movie.Director.Name}}</mat-card-subtitle>
+    </mat-card-header>
+    </div>
+    <img mat-card-image src={{movie.ImagePath}} alt={{movie.Title}} />
+    <mat-card-actions>
+      <div>
+        <button
+          mat-button
+        >
+          Genre
+        </button>
+
+        <button
+          mat-button
+        >
+          Director
+        </button>
+
+        <button
+          mat-button
+        >
+          Synopsis
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
