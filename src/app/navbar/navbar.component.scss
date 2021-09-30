@@ -1,8 +1,8 @@
-$Small-movie-theater-1-hex: #D93250;
+$Small-movie-theater-1-hex: #d93250;
 $Small-movie-theater-2-hex: #732743;
-$Small-movie-theater-3-hex: #030F26;
-$Small-movie-theater-4-hex: #F25757;
-$Small-movie-theater-5-hex: #F2F2F2;
+$Small-movie-theater-3-hex: #030f26;
+$Small-movie-theater-4-hex: #f25757;
+$Small-movie-theater-5-hex: #f2f2f2;
 
 .nav {
   flex: 1 1 auto;
@@ -14,6 +14,7 @@ $Small-movie-theater-5-hex: #F2F2F2;
   margin: 10px auto;
   width: 90%;
   height: 100px;
+  overflow: hidden;
 }
 
 h1 {
@@ -22,19 +23,35 @@ h1 {
 }
 
 h1:hover {
+  cursor: pointer;
   color: $Small-movie-theater-5-hex;
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 button {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 button:hover {
   color: $Small-movie-theater-5-hex;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .active {
   color: $Small-movie-theater-5-hex;
+}
+
+@media screen and (max-width: 400px) {
+  .nav {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 0.8em;
+  }
 }

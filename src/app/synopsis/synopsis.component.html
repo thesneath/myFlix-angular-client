@@ -1,1 +1,9 @@
-<p>synopsis works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Synopsis</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>{{ data.description }}</mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="closeDialog()">close</button>
+  </mat-card-actions>
+</mat-card>

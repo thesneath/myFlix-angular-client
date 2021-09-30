@@ -1,18 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { ProfileUpdateComponent } from '../profile-update/profile-update.component';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-
-  movies: any = []
+  movies: any = [];
   user: any = [];
   favorites: any = [];
   favId: any = [];
-  constructor(public fetchApiData: FetchApiDataService) { }
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar,
+    public router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
@@ -22,8 +30,8 @@ export class ProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.getUser().subscribe((response: any) => {
       this.user = response;
-      this.favId = response.FavoriteMovies
-      return this.user
+      this.favId = response.FavoriteMovies;
+      return this.user;
     });
   }
 
@@ -31,13 +39,25 @@ export class ProfileComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;
       this.movies.forEach((movie: any) => {
-        if(this.favId.includes(movie._id)) {
+        if (this.favId.includes(movie._id)) {
           this.favorites.push(movie.Title);
-        } 
-          return this.favorites;
+        }
+        return this.favorites;
       });
+    });
+  }
 
+  deleteUser(): void {
+    this.fetchApiData.deleteUser().subscribe((response) => {
+      this.snackBar.open('Account Deleted.', 'OK', {
+        duration: 2000
+      })
     })
   }
 
+  openUpdateDialog(): void {
+    this.dialog.open(ProfileUpdateComponent, {
+      width: '400px',
+    });
+  }
 }

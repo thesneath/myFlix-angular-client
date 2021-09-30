@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit(): void {
+    this.isLoggedIn();
   }
 
   isLoggedIn(): any {

@@ -1,8 +1,8 @@
-$Small-movie-theater-1-hex: #D93250;
+$Small-movie-theater-1-hex: #d93250;
 $Small-movie-theater-2-hex: #732743;
-$Small-movie-theater-3-hex: #030F26;
-$Small-movie-theater-4-hex: #F25757;
-$Small-movie-theater-5-hex: #F2F2F2;
+$Small-movie-theater-3-hex: #030f26;
+$Small-movie-theater-4-hex: #f25757;
+$Small-movie-theater-5-hex: #f2f2f2;
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -18,20 +18,27 @@ $Small-movie-theater-5-hex: #F2F2F2;
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $myFlix-Angular-client-primary: mat.define-palette(mat.$indigo-palette);
-$myFlix-Angular-client-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$myFlix-Angular-client-accent: mat.define-palette(
+  mat.$pink-palette,
+  A200,
+  A100,
+  A400
+);
 
 // The warn palette is optional (defaults to red).
 $myFlix-Angular-client-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$myFlix-Angular-client-theme: mat.define-light-theme((
-  color: (
-    primary: $myFlix-Angular-client-primary,
-    accent: $myFlix-Angular-client-accent,
-    warn: $myFlix-Angular-client-warn,
+$myFlix-Angular-client-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $myFlix-Angular-client-primary,
+      accent: $myFlix-Angular-client-accent,
+      warn: $myFlix-Angular-client-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -40,7 +47,13 @@ $myFlix-Angular-client-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { 
-  height: 100%; 
-  background-color: $Small-movie-theater-2-hex;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+  background-color: $Small-movie-theater-2-hex;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: $Small-movie-theater-3-hex;
+}
