@@ -35,6 +35,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Creates the favorite movies list
+   * @returns an a array of movie titles that match the _id stored in the database
+   */
   getFavorites(): void {
     this.fetchApiData.getAllMovies().subscribe((response: any) => {
       this.movies = response;

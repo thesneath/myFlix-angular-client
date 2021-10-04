@@ -23,7 +23,10 @@ export class UserRegistrationFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-
+  
+  /** 
+  * Triggered when user clicks the sign up button
+  */
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe(
       (response) => {
